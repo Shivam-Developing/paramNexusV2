@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Search, MessageSquare, Globe, ArrowRight } from "lucide-react";
-import { Prism } from "@/components/Prism";
+import { Galaxy } from "@/components/Galaxy";
 import { BlurText } from "@/components/BlurText";
 import { GradientText } from "@/components/GradientText";
 
@@ -12,7 +12,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen bg-obsidian overflow-hidden z-0 flex items-center pt-24 lg:pt-0">
       {/* Layer 1: Ambient Backdrop Canvas */}
       <div className="absolute inset-0 z-[1] pointer-events-none">
-        <Prism className="opacity-50" />
+        <Galaxy className="opacity-40" />
       </div>
 
       {/* Layer 2: Corrected Ambient Radial Glow (Fixes broken circular strip) */}
