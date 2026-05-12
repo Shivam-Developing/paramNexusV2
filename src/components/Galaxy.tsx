@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
-export const Galaxy: React.FC<{ className?: string }> = ({ className = "" }) => {
+export const Galaxy: React.FC<{ className?: string; color?: string }> = ({ className = "", color }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const Galaxy: React.FC<{ className?: string }> = ({ className = "" }) => 
       y: Math.random() * height,
       size: Math.random() * 2.2 + 0.8,
       baseSpeed: Math.random() * 0.4 + 0.1,
-      color: Math.random() > 0.45 ? "#8B5CF6" : "#06B6D4",
+      color: color ? (Math.random() > 0.5 ? color : "#ffffff") : (Math.random() > 0.45 ? "#8B5CF6" : "#06B6D4"),
       alpha: Math.random() * 0.75 + 0.25,
       angle: Math.random() * Math.PI * 2,
     }));

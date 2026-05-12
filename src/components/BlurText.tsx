@@ -24,7 +24,7 @@ export const BlurText: React.FC<BlurTextProps> = ({ text, className = "", delay 
       opacity: 1,
       filter: "blur(0px)",
       y: 0,
-      transition: { duration: 0.6, ease: [0.2, 0.65, 0.3, 0.9] },
+      transition: { duration: 0.6, ease: [0.2, 0.65, 0.3, 0.9] as [number, number, number, number] },
     },
     hidden: {
       opacity: 0,
