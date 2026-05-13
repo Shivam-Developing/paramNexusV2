@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Search, MessageSquare, Globe, ArrowRight } from "lucide-react";
+import { Search, MessageSquare, Globe, ArrowRight, Smartphone, Video } from "lucide-react";
 import { Galaxy } from "@/components/Galaxy";
 import { BlurText } from "@/components/BlurText";
 import { GradientText } from "@/components/GradientText";
@@ -54,23 +54,32 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2, duration: 0.5 }}
-              className="mt-10 flex flex-col sm:flex-row gap-4 items-center relative"
+              className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 relative"
             >
               <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-bold text-white bg-gradient-to-r from-neonIndigo to-purple-600 rounded-full shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] hover:-translate-y-1 transition-all duration-300 mobile-full-width-cta z-10"
+                href="/services/website-development"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 text-[11px] font-bold text-white bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest"
               >
-                <Search className="w-4 h-4" /> Get Your Free Digital Audit
+                <Globe className="w-4 h-4 text-indigo-400" /> Website Development
               </Link>
-              <a
-                href="https://wa.me/918744003727"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-bold text-gray-300 border border-white/10 rounded-full hover:bg-white/5 transition-all duration-300 mobile-full-width-cta"
+              <Link
+                href="/services/social-media"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 text-[11px] font-bold text-white bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest"
               >
-                <MessageSquare className="w-4 h-4" /> Talk on WhatsApp
-              </a>
-              
+                <Smartphone className="w-4 h-4 text-cyan-400" /> Social Media Marketing
+              </Link>
+              <Link
+                href="/kliquenexus"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 text-[11px] font-bold text-white bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest"
+              >
+                <Video className="w-4 h-4 text-purple-400" /> KliqueNexus — Video
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 text-[11px] font-bold text-white bg-gradient-to-r from-neonIndigo to-purple-600 rounded-2xl shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_40px_rgba(99,102,241,0.5)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest"
+              >
+                Get Free Audit <ArrowRight className="w-4 h-4" />
+              </Link>
             </motion.div>
 
             <motion.p
@@ -107,7 +116,7 @@ export default function HeroSection() {
                     <div className="p-6 rounded-2xl bg-white/5 border border-white/10 relative overflow-hidden group/item">
                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity" />
                        <p className="text-4xl font-display font-black text-white mb-1">20+</p>
-                       <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Years of Jaipur Legacy</p>
+                       <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest leading-relaxed">Years of Jaipur Advertising <br /> Legacy & Trust</p>
                     </div>
                     
                     <div className="flex items-center gap-4 px-2">

@@ -2,35 +2,34 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Building2, Bot, TrendingUp, Phone, MessageSquare, ClipboardList } from "lucide-react";
+import { ArrowRight, MessageSquare, ClipboardList, ShieldCheck, MapPin, Target, Users } from "lucide-react";
 import { Galaxy } from "@/components/Galaxy";
 import { MagicBento } from "@/components/MagicBento";
 import { GradientText } from "@/components/GradientText";
-import { Prism } from "@/components/Prism";
 import { Cubes } from "@/components/Cubes";
+import AnimatedList from "@/components/AnimatedList";
+import { useState } from "react";
 
-const pillars = [
-  {
-    icon: <Building2 className="w-8 h-8 text-indigo-400" />,
-    title: "ROOTED IN JAIPUR",
-    body: "We didn't study your market from a Mumbai office. We grew up in it. We know the Diwali rush for jewelers, the admission season for coaching institutes, and the wedding tourism spike for hotels. Our strategies are built around your actual business calendar — not generic templates.",
-  },
-  {
-    icon: <Bot className="w-8 h-8 text-cyan-400" />,
-    title: "POWERED BY AI",
-    body: "Every service we deliver is executed with a carefully chosen AI toolstack that reduces delivery time and cost by up to 70%. This isn't automation for automation's sake — it's precision efficiency that lets us price fairly without ever compromising on quality.",
-  },
-  {
-    icon: <TrendingUp className="w-8 h-8 text-indigo-400" />,
-    title: "OBSESSED WITH YOUR GROWTH",
-    body: "We don't chase follower counts or website traffic numbers. We chase the metrics that matter to a local business owner: calls received, inquiries submitted, customers who said 'I found you on Google.' That is our report card.",
-  },
+const clientTabs = [
+  { id: "banking", label: "Banking & Finance" },
+  { id: "education", label: "Education" },
+  { id: "realestate", label: "Real Estate" },
+  { id: "healthcare", label: "Healthcare" },
 ];
 
+const clients = {
+  banking: ["HDFC Bank Legal", "PNB Bank Legal", "The Integral Urban Co-operative Bank", "Jain Finance"],
+  education: ["Vision IAS", "Patanjali IAS", "Nirman IAS", "Geetanjali RAS", "Swastik Law Academy", "IIS University", "The Cambridge School", "Sainik School", "Divine Public School", "KPS Udaan", "KNS Education", "Warren Academy", "Bachpan Play School", "Kidzee Play School"],
+  realestate: ["KEDIA Group", "SiddhiAnanta Group", "SiddhiRaj Group", "Kiara Group", "Urban Gaon Properties", "Sarodha Group", "Hari Om Build Home", "Jogi Real Home"],
+  healthcare: ["Liberty Hospital", "JAIN ENT", "NK Dental", "Thapar Dental", "Jaipur Hearing", "Adinath ENT", "Pink City Nursing College", "Upchar Nursing College", "Krishna Nursing College", "Soni Nursing College"],
+};
+
 export default function AboutPage() {
+  const [activeTab, setActiveTab] = useState("banking");
+
   return (
     <div className="bg-obsidian text-white min-h-screen selection:bg-indigo-500/30">
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden z-0">
         <div className="absolute inset-0 z-[1] pointer-events-none">
           <Galaxy className="opacity-40" />
@@ -39,199 +38,286 @@ export default function AboutPage() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-600/10 blur-[140px] rounded-full z-[2] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[10]">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1.05] tracking-tight">
-                We&apos;ve Served Jaipur <br />
-                <GradientText>For Decades.</GradientText>
-              </h1>
-              <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-gray-400">
-                Now We&apos;re Taking It Digital.
-              </h2>
-              <p className="mt-8 text-gray-400 text-lg lg:text-xl leading-relaxed max-w-xl">
-                Param Advertising Agency has been a household name in Jaipur advertising for 20+ years. 
-                Param Nexus is the next evolution — taking that trust into the digital future.
-              </p>
+          <div className="max-w-4xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-10">
+              PARAM NEXUS · Digital Wing of Param Advertising Agency
             </motion.div>
             
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3, duration: 1 }}
-              className="hidden lg:block relative"
-            >
-               <div className="absolute inset-0 bg-indigo-500/20 blur-[120px] scale-75 opacity-50" />
-               <div className="relative overflow-hidden rounded-2xl bg-[#121216]/60 backdrop-blur-xl border border-white/10 p-8 shadow-[0_0_40px_rgba(99,102,241,0.15)] flex flex-col justify-between ml-auto max-w-md aspect-square">
-                 <div className="absolute -right-10 -top-10 w-40 h-40 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none" />
-                 <span className="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-2">Verified Impact</span>
-                 <div className="my-6">
-                   <h3 className="text-6xl font-extrabold text-white tracking-tight">20+</h3>
-                   <p className="text-sm font-medium text-gray-400 mt-1">Years of Local Rajasthan Authority</p>
-                 </div>
-                 <div className="border-t border-white/5 pt-4 flex justify-between items-center text-xs text-gray-500">
-                   <span>Dainik Bhaskar</span>
-                   <span>•</span>
-                   <span>Rajasthan Patrika</span>
-                 </div>
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1.05] tracking-tight mb-12">
+              Built on Two Decades of Trust.<br />
+              <GradientText>Driven by a Single Purpose.</GradientText>
+            </h1>
+            
+            <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-start">
+               <div className="space-y-8">
+                  <p className="text-xl lg:text-2xl text-white font-medium leading-relaxed">
+                    PARAM NEXUS did not start with a blank page. 
+                  </p>
+                  <p className="text-lg text-gray-400 leading-relaxed">
+                    It started with 20 years of <span className="text-white font-bold uppercase tracking-wide">Param Advertising Agency</span> — 
+                    a firm that has spent two decades placing campaigns, building 
+                    relationships, and earning the trust of Jaipur&apos;s most 
+                    recognised businesses.
+                  </p>
+                  <p className="text-lg text-indigo-400 font-bold uppercase tracking-widest pt-4">
+                    PARAM NEXUS IS THE NATURAL NEXT STEP.<br />
+                    THE DIGITAL WING OF A LEGACY THAT JAIPUR ALREADY KNOWS.
+                  </p>
                </div>
-            </motion.div>
+               
+               <div className="hidden lg:block">
+                  <MagicBento className="!p-10 w-80 aspect-square flex flex-col justify-between border-indigo-500/30">
+                     <div>
+                        <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Verified Authority</p>
+                        <h3 className="text-6xl font-black text-white">20+</h3>
+                        <p className="text-xs font-bold text-indigo-400 mt-1 uppercase tracking-widest">Years of Jaipur Legacy</p>
+                     </div>
+                     <div className="pt-6 border-t border-white/5 space-y-3">
+                        <div className="flex justify-between text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                           <span>Bhaskar</span>
+                           <span>Patrika</span>
+                        </div>
+                        <div className="flex justify-between text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                           <span>TOI</span>
+                           <span>Jagran</span>
+                        </div>
+                     </div>
+                  </MagicBento>
+               </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="bg-obsidian py-24 lg:py-32 relative border-t border-white/5">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-             <div className="space-y-12">
-                <div className="p-8 rounded-3xl bg-[#121216]/60 backdrop-blur-xl border-l-4 border-l-indigo-500 border border-white/5 shadow-[0_0_30px_rgba(99,102,241,0.1)]">
-                  <p className="text-xl text-gray-200 leading-relaxed font-display">
-                    Param Advertising Agency has placed thousands of campaigns across
-                    Dainik Bhaskar, Rajasthan Patrika, Times of India, and Mahanagar Times. 
-                    In that time, we built genuine trust with hundreds of Jaipur business owners.
-                  </p>
-                </div>
-                
-                <div className="p-8 rounded-3xl bg-[#121216]/40 backdrop-blur-xl border-l-4 border-l-cyan-500 border border-white/5">
-                  <p className="text-lg text-gray-400 leading-relaxed">
-                    But we kept seeing the same story repeat itself. A brilliant jewelry
-                    showroom in Johari Bazar. A thriving coaching institute near Gopalpura. 
-                    A heritage hotel near Amer. All investing in print — while their digital 
-                    presence was broken, outdated, or simply didn&apos;t exist.
-                  </p>
-                </div>
-             </div>
-
-             <div className="space-y-12 lg:mt-24">
-                <div className="p-8 rounded-3xl bg-[#121216]/40 backdrop-blur-xl border-l-4 border-l-purple-500 border border-white/5">
-                  <p className="text-lg text-gray-400 leading-relaxed">
-                    Param Nexus is our answer to that problem. Not with overpriced retainers. 
-                    Not with generic strategies imported from Delhi or Mumbai. With AI-powered 
-                    execution, deep local market knowledge, and pricing that respects where 
-                    our clients actually are.
-                  </p>
-                </div>
-
-                <motion.div 
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  className="p-8 bg-gradient-to-br from-indigo-500/10 to-transparent rounded-3xl border border-white/5"
-                >
-                  <p className="text-2xl font-display font-bold text-white italic leading-tight">
-                    &ldquo;Our Mission: Make every Jaipur business impossible to ignore online.&rdquo;
-                  </p>
-                </motion.div>
-             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Three Pillars */}
+      {/* Philosophy Section */}
       <section className="bg-obsidian py-24 lg:py-32 relative border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid md:grid-cols-3 gap-8">
-            {pillars.map((p, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <MagicBento className="h-full relative rounded-2xl bg-[#121216]/60 backdrop-blur-xl border border-white/10 p-6 shadow-[0_0_30px_rgba(99,102,241,0.15)] hover:shadow-[0_0_40px_rgba(99,102,241,0.3)] transition-all duration-500 hover:-translate-y-1 overflow-hidden group">
-                  <Cubes className="opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-                  <div className="mb-8 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 border border-white/10 group-hover:scale-110 transition-transform duration-500 relative z-10">
-                    {p.icon}
-                  </div>
-                  <h3 className="font-display text-xs font-bold text-indigo-400 uppercase tracking-widest mb-4 group-hover:text-white transition-colors relative z-10">
-                    {p.title}
-                  </h3>
-                  <p className="text-sm text-gray-400 leading-relaxed group-hover:text-gray-200 transition-colors relative z-10">{p.body}</p>
-                </MagicBento>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="bg-obsidian py-24 lg:py-32 relative border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white text-center mb-20 leading-tight">
-            The People Behind <br />
-            <GradientText>Param Nexus</GradientText>
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-             <MagicBento className="flex flex-col gap-6 p-10 relative rounded-2xl bg-[#121216]/60 backdrop-blur-xl border border-white/10 shadow-[0_0_30px_rgba(99,102,241,0.15)] overflow-hidden">
-                <Cubes className="absolute top-0 right-0 opacity-10" />
-                <div className="absolute top-0 right-0 p-8 opacity-10">
-                   <Building2 className="w-24 h-24 text-indigo-500" />
-                </div>
-                <div>
-                  <h3 className="font-display text-3xl font-bold text-white mb-1">Shivam Dhanda</h3>
-                  <p className="text-sm text-indigo-400 font-bold uppercase tracking-widest mb-6">Founder & Director</p>
-                  <p className="text-base text-gray-400 leading-relaxed">Driving the technology and creative vision at Param Nexus, Shivam combines AI expertise with a passion for helping local businesses achieve digital dominance.</p>
-                </div>
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-20">What We Believe</h2>
+          
+          <div className="grid lg:grid-cols-3 gap-8">
+             <MagicBento className="h-full">
+                <p className="text-xl font-bold text-white mb-6 leading-tight italic">
+                  &ldquo;Trust is not built in a campaign. It is built over years of showing up.&rdquo;
+                </p>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Param Advertising Agency proved this in print. 
+                  Param Nexus carries it forward in digital.
+                </p>
              </MagicBento>
-             <MagicBento className="flex flex-col gap-6 p-10 relative rounded-2xl bg-[#121216]/60 backdrop-blur-xl border border-white/10 shadow-[0_0_30px_rgba(99,102,241,0.15)] overflow-hidden">
-                <Cubes className="absolute top-0 right-0 opacity-10" />
-                <div className="absolute top-0 right-0 p-8 opacity-10">
-                   <Building2 className="w-24 h-24 text-indigo-500" />
-                </div>
-                <div>
-                  <h3 className="font-display text-3xl font-bold text-white mb-1">Ayush Sharma</h3>
-                  <p className="text-sm text-indigo-400 font-bold uppercase tracking-widest mb-6">Founder & Director</p>
-                  <p className="text-base text-gray-400 leading-relaxed">Leading Param Nexus&apos;s vision to bridge print legacy with digital innovation, Ayush brings strategic business acumen and deep understanding of the Jaipur market.</p>
-                </div>
+
+             <MagicBento className="h-full">
+                <p className="text-xl font-bold text-white mb-6 leading-tight italic">
+                  &ldquo;The best marketing understands the market it speaks to.&rdquo;
+                </p>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  We are not a Delhi agency. Not a Mumbai playbook. 
+                  We are Jaipur — we understand the city&apos;s rhythms, its 
+                  festivals, its customers, its languages, and its values.
+                </p>
+             </MagicBento>
+
+             <MagicBento className="h-full">
+                <p className="text-xl font-bold text-white mb-6 leading-tight italic">
+                  &ldquo;A business&apos;s growth is our responsibility, not just our deliverable.&rdquo;
+                </p>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  We don&apos;t report impressions. We report outcomes. 
+                  Calls. Inquiries. Customers. Results that matter 
+                  to the person who wrote the cheque.
+                </p>
              </MagicBento>
           </div>
         </div>
       </section>
 
-      {/* Parent Brand Bridge */}
-      <section className="bg-obsidian py-24 lg:py-32 relative overflow-hidden border-t border-white/5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(99,102,241,0.1),transparent_50%)] pointer-events-none" />
+      {/* The Foundation Section */}
+      <section className="bg-obsidian py-24 lg:py-32 relative border-t border-white/5 overflow-hidden">
+        <div className="absolute top-1/2 left-0 w-96 h-96 bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-6">
-              Our Parent Brand — <GradientText>The Foundation</GradientText>
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto mb-16 leading-relaxed">
-              Param Advertising Agency is not just our parent company — it&apos;s our proof of concept. 
-              Decades of building trust, delivering campaigns on time, and helping Jaipur businesses grow 
-              is the foundation on which Param Nexus stands.
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-10">The Foundation Param Nexus Is Built On</h2>
+          <div className="space-y-6 text-lg text-gray-400 leading-relaxed text-left lg:text-center">
+            <p>
+              Param Advertising Agency has served 1000+ businesses across 
+              Jaipur — from national banks to local coaching institutes, 
+              from real estate developers to healthcare institutions. 
+            </p>
+            <p>
+              Every one of those relationships was built the same way: 
+              on-time delivery, honest communication, and results that 
+              kept clients coming back year after year. 
+            </p>
+            <p>
+              Param Nexus inherits that operational standard completely. 
+              Same accountability. Same work ethic. Same commitment to 
+              the businesses of Jaipur — now applied to websites, 
+              social media, and video content. 
+            </p>
+            <p className="text-white font-medium pt-4">
+              When you engage Param Nexus, you are not betting on a new 
+              agency finding its feet. You are working with an organisation 
+              that Jaipur&apos;s business community has already vetted — 
+              over 20 years and 43+ client relationships.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-            <MagicBento className="text-center flex-1 max-w-xs !p-10">
-              <h3 className="font-display text-xl font-bold text-white mb-2">PARAM ADVERTISING</h3>
-              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Print · Legacy · Trust</p>
-            </MagicBento>
-            
-            <div className="flex items-center justify-center opacity-30">
-              <ArrowRight className="w-12 h-12 text-indigo-500 hidden md:block" />
-              <div className="w-0.5 h-12 bg-white/10 md:hidden" />
-            </div>
+      {/* Three Pillars Section */}
+      <section className="bg-obsidian py-24 lg:py-32 relative border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-20 text-center">Three Principles That Guide Everything We Do</h2>
+          
+          <div className="grid lg:grid-cols-3 gap-8">
+             <MagicBento className="flex flex-col group">
+                <div className="mb-8 w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500">
+                   <ShieldCheck className="w-6 h-6" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-white mb-4 tracking-tight uppercase">The Param Advertising Legacy</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Param Advertising Agency is our parent, our foundation, 
+                  and our proof of concept. Every value Param Nexus operates 
+                  by was forged in two decades of print and media advertising 
+                  for Jaipur&apos;s most demanding clients.
+                </p>
+             </MagicBento>
 
-            <MagicBento className="text-center flex-1 max-w-xs !p-10 border-indigo-500/20">
-              <h3 className="font-display text-xl font-bold text-white mb-2">PARAM NEXUS</h3>
-              <p className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">Digital · AI · Future</p>
-            </MagicBento>
+             <MagicBento className="flex flex-col group">
+                <div className="mb-8 w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-500">
+                   <MapPin className="w-6 h-6" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-white mb-4 tracking-tight uppercase">Jaipur Is Not Just Our Market. It Is Our Home.</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  We understand this city at a level no outsider agency 
+                  can replicate. The business seasons, the community 
+                  relationships, the local language — it is all native to us.
+                </p>
+             </MagicBento>
+
+             <MagicBento className="flex flex-col group">
+                <div className="mb-8 w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-all duration-500">
+                   <Target className="w-6 h-6" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-white mb-4 tracking-tight uppercase">Outcomes Over Optics.</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Our definition of success is simple: did your business 
+                  receive more calls, more inquiries, more customers after 
+                  working with us? Follower counts and reach numbers are 
+                  secondary.
+                </p>
+             </MagicBento>
           </div>
+        </div>
+      </section>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-20">
-            <Link href="/contact" className="px-10 py-4 text-sm font-bold text-white bg-gradient-to-r from-neonIndigo to-purple-600 rounded-full shadow-2xl flex items-center gap-2 hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] transition-all">
-              <ClipboardList className="w-4 h-4" /> Start Your Journey
+      {/* Two Wings Section */}
+      <section className="bg-obsidian py-24 lg:py-32 relative border-t border-white/5 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-20 text-center">One Organisation. Two Powerful Wings.</h2>
+          
+          <div className="grid lg:grid-cols-2 gap-px bg-white/10 rounded-[3rem] overflow-hidden border border-white/10 shadow-3xl">
+             <div className="bg-[#FAF9F6] p-12 lg:p-20 text-black">
+                <p className="text-[10px] font-bold text-amber-900 uppercase tracking-[0.3em] mb-4">Established Legacy</p>
+                <h3 className="font-display text-4xl font-bold mb-10 tracking-tight">PARAM <br /> ADVERTISING AGENCY</h3>
+                <div className="space-y-4 text-amber-950/70 font-bold uppercase tracking-widest text-sm">
+                   <div className="flex items-center justify-between"><span>Newspapers</span> <ArrowRight className="w-4 h-4" /></div>
+                   <div className="flex items-center justify-between"><span>News Channels</span> <ArrowRight className="w-4 h-4" /></div>
+                   <div className="flex items-center justify-between"><span>FM Radio</span> <ArrowRight className="w-4 h-4" /></div>
+                   <div className="flex items-center justify-between"><span>Cinema Advertising</span> <ArrowRight className="w-4 h-4" /></div>
+                   <div className="flex items-center justify-between"><span>Outdoor Media</span> <ArrowRight className="w-4 h-4" /></div>
+                   <div className="flex items-center justify-between"><span>Print & Stationery</span> <ArrowRight className="w-4 h-4" /></div>
+                </div>
+             </div>
+             
+             <div className="bg-[#0B0B0E] p-12 lg:p-20">
+                <p className="text-[10px] font-bold text-indigo-400 uppercase tracking-[0.3em] mb-4">Digital Future</p>
+                <h3 className="font-display text-4xl font-bold mb-10 tracking-tight">PARAM <br /> NEXUS</h3>
+                <div className="space-y-4 text-gray-400 font-bold uppercase tracking-widest text-sm">
+                   <div>Websites</div>
+                   <div>Social Media</div>
+                   <div>Video Content</div>
+                   <div>Google Presence</div>
+                   <div>WhatsApp Automation</div>
+                   <div>Brand Content</div>
+                </div>
+             </div>
+          </div>
+          
+          <div className="mt-16 text-center">
+             <p className="text-xl font-bold text-white mb-8">Together: Print + Digital · Every Platform · Every Customer</p>
+             <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+               Most businesses in Jaipur choose one or the other. 
+               The ones that grow fastest use both. 
+               With Param Advertising Agency and Param Nexus, you have a single 
+               trusted partner covering every touchpoint.
+             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Proof Section */}
+      <section className="bg-obsidian py-24 lg:py-32 relative border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
+             <div>
+                <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-6">43+ Jaipur Businesses Have Trusted Param Advertising Agency</h2>
+                <p className="text-gray-400 text-lg">These are not case studies. These are ongoing relationships.</p>
+             </div>
+             <div className="inline-flex items-center gap-4 px-6 py-4 rounded-2xl bg-white/5 border border-white/10">
+                <Users className="w-6 h-6 text-indigo-400" />
+                <div>
+                   <p className="text-2xl font-bold text-white leading-none">43+</p>
+                   <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Active Clients</p>
+                </div>
+             </div>
+          </div>
+          
+          <div className="grid lg:grid-cols-[300px_1fr] gap-12">
+             <div className="space-y-2">
+                {clientTabs.map(tab => (
+                   <button 
+                      key={tab.id}
+                      onClick={() => setActiveTab(tab.id)}
+                      className={`w-full text-left px-6 py-4 rounded-xl font-bold transition-all ${activeTab === tab.id ? "bg-indigo-500 text-white shadow-lg shadow-indigo-500/20" : "bg-white/5 text-gray-500 hover:bg-white/10 hover:text-white"}`}
+                   >
+                      {tab.label}
+                   </button>
+                ))}
+             </div>
+             
+             <div className="bg-[#121216]/60 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 lg:p-12">
+                <div className="grid sm:grid-cols-2 gap-4">
+                   {clients[activeTab as keyof typeof clients].map((client, i) => (
+                      <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 group hover:border-indigo-500/30 transition-all">
+                         <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 group-hover:scale-150 transition-transform" />
+                         <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">{client}</span>
+                      </div>
+                   ))}
+                </div>
+             </div>
+          </div>
+          
+          <p className="mt-20 text-center text-gray-500 italic text-sm">
+            Param Advertising Agency&apos;s client retention speaks for itself — and Param Nexus is built on the same promise.
+          </p>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="bg-obsidian py-24 lg:py-32 relative border-t border-white/5 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(99,102,241,0.1),transparent_50%)] pointer-events-none" />
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-8">Ready to Work With a Name<br />Jaipur Already Trusts?</h2>
+          <p className="text-gray-400 text-lg mb-12">Whether you need a website, a social media strategy, a video for your brand, or a full print campaign — Param Nexus and Param Advertising Agency are ready to deliver it. Together.</p>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link href="/services/website-development" className="w-full sm:w-auto px-10 py-5 text-sm font-bold text-white bg-gradient-to-r from-neonIndigo to-purple-600 rounded-full shadow-2xl flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] transition-all">
+               Explore Digital Services <ArrowRight className="w-4 h-4" />
             </Link>
-            <a href="tel:+918744003727" className="px-10 py-4 text-sm font-bold text-gray-300 border border-white/10 rounded-full hover:bg-white/5 transition-all flex items-center gap-2">
-              <MessageSquare className="w-4 h-4" /> Talk to Our Team
-            </a>
+            <Link href="/contact" className="w-full sm:w-auto px-10 py-5 text-sm font-bold text-gray-300 border border-white/10 rounded-full hover:bg-white/5 transition-all flex items-center justify-center gap-2">
+               Book a Print Campaign
+            </Link>
           </div>
         </div>
       </section>

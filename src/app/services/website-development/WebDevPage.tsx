@@ -91,7 +91,10 @@ export default function WebDevPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[10]">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+              <motion.div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-10">
+                PARAM NEXUS · Digital Wing of Param Advertising Agency
+              </motion.div>
               <BlurText 
                 text="Your Business Deserves a Website"
                 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1]"
@@ -140,9 +143,18 @@ export default function WebDevPage() {
           
           {/* Stats */}
           <div className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto border-t border-white/5 pt-16">
-            <AnimatedCounter end={75} suffix="%" className="text-4xl font-display font-bold text-white mb-2" labelClassName="text-[10px] font-bold text-gray-500 uppercase tracking-widest" label="Judge credibility by website" />
-            <AnimatedCounter end={88} suffix="%" className="text-4xl font-display font-bold text-white mb-2" labelClassName="text-[10px] font-bold text-gray-500 uppercase tracking-widest" label="Search before visiting locally" />
-            <AnimatedCounter end={53} suffix="%" className="text-4xl font-display font-bold text-white mb-2" labelClassName="text-[10px] font-bold text-gray-500 uppercase tracking-widest" label="Leave if page loads slowly" />
+            <div className="text-center">
+              <p className="text-4xl font-display font-bold text-white mb-2">20+</p>
+              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Years of Trust Legacy</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-display font-bold text-white mb-2">1000+</p>
+              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Businesses Served Locally</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-display font-bold text-white mb-2">15 Days</p>
+              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Guaranteed Live Date</p>
+            </div>
           </div>
         </div>
       </section>
@@ -215,18 +227,8 @@ export default function WebDevPage() {
                     {tier.cta} <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </div>
-                {/* Internal neon backglow */}
-                <div className={`absolute -bottom-20 -right-20 w-64 h-64 rounded-full blur-[100px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 ${tier.popular ? "bg-indigo-500/10" : "bg-white/5"}`} />
               </MagicBento>
             ))}
-          </div>
-          
-          <div className="mt-16 max-w-xl mx-auto bg-[#121216]/60 backdrop-blur-md p-8 text-center border border-dashed border-white/10 rounded-3xl">
-             <p className="text-base text-gray-400">
-               A Delhi agency charges <strong className="text-white">₹80,000–₹2,50,000</strong> for the same work. 
-               <br />
-               We charge <strong className="text-indigo-400 font-bold">₹8,999–₹39,999</strong> — and deliver in 15 days.
-             </p>
           </div>
         </div>
       </section>

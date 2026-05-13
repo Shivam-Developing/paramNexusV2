@@ -31,17 +31,23 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Col 1: Brand Logos */}
           <div className="lg:col-span-1">
-            <div className="mb-8">
-              <h3 className="font-display text-2xl font-bold text-white tracking-tight">
-                PARAM NEXUS
-              </h3>
-              <p className="text-[10px] font-bold text-neonIndigo mt-2 uppercase tracking-[0.2em]">AI-Powered Digital Growth</p>
+            <div className="mb-8 flex items-center gap-3">
+              <img src="/logo.jpeg" alt="Param Nexus" className="w-12 h-12 rounded-xl object-cover" />
+              <div>
+                <h3 className="font-display text-2xl font-bold text-white tracking-tight">
+                  PARAM NEXUS
+                </h3>
+                <p className="text-[10px] font-bold text-neonIndigo uppercase tracking-[0.2em]">Digital Growth Agency · Jaipur</p>
+              </div>
             </div>
             <div className="mb-8 pt-6 border-t border-white/5">
+              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">A proud digital division of</p>
               <h4 className="font-display text-base font-bold text-gray-400 uppercase tracking-widest">
-                PARAM ADVERTISING
+                PARAM ADVERTISING AGENCY
               </h4>
-              <p className="text-[10px] font-bold text-cyberCyan mt-2 uppercase tracking-[0.2em]">Jaipur&apos;s Print Authority</p>
+              <Link href="/our-legacy" className="inline-flex items-center gap-2 text-[10px] font-bold text-cyberCyan mt-2 uppercase tracking-[0.2em] hover:text-white transition-colors">
+                [→ Visit Legacy Page]
+              </Link>
             </div>
             <div className="flex gap-4 mt-8">
               {socialLinks.map((s) => (

@@ -54,7 +54,10 @@ export default function SocialMediaPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[10]">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+              <motion.div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-10">
+                PARAM NEXUS · Digital Wing of Param Advertising Agency
+              </motion.div>
               <BlurText 
                 text="Your Instagram Has Been Silent."
                 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1]"
@@ -104,12 +107,18 @@ export default function SocialMediaPage() {
           
           {/* Stats */}
           <div className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto border-t border-white/5 pt-16">
-            <AnimatedCounter end={88} suffix="%" className="text-4xl font-display font-bold text-white mb-2" labelClassName="text-[10px] font-bold text-gray-500 uppercase tracking-widest" label="Check social before purchase" />
+            <div className="text-center">
+              <p className="text-4xl font-display font-bold text-white mb-2">20+</p>
+              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Years of Market Intel</p>
+            </div>
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-display font-bold text-white">4.2 Cr</div>
               <p className="text-[10px] font-bold text-gray-500 mt-3 uppercase tracking-widest">Insta users in Rajasthan</p>
             </div>
-            <AnimatedCounter end={40} suffix="%" className="text-4xl font-display font-bold text-white mb-2" labelClassName="text-[10px] font-bold text-gray-500 uppercase tracking-widest" label="Lost by inconsistent posting" />
+            <div className="text-center">
+              <p className="text-4xl font-display font-bold text-white mb-2">100%</p>
+              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Local Content Control</p>
+            </div>
           </div>
         </div>
       </section>

@@ -61,27 +61,24 @@ export default function ContactPage() {
               Starts With One Conversation.
             </GradientText>
           </div>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="mt-8 text-gray-400 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-            No sales pressure. No jargon. Just an honest conversation about
-            what your business needs online. It&apos;s free. We actually pick up the phone.
-          </motion.p>
         </div>
 
-        <div className="grid lg:grid-cols-[1fr_400px] gap-12 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-[1fr_420px] gap-12 lg:gap-20 items-start">
           {/* Left — Form */}
-          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
             {formState === "success" ? (
               <MagicBento className="!p-16 text-center">
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", damping: 12 }}>
                   <CheckCircle className="w-20 h-20 text-indigo-400 mx-auto mb-6" />
                 </motion.div>
                 <h3 className="font-display text-3xl font-bold text-white mb-4 tracking-tight">Received!</h3>
-                <p className="text-gray-400 text-lg">Our team will call you within 2 hours.</p>
+                <p className="text-gray-400 text-lg">Our team will call you within 2 business hours.</p>
                 <button onClick={() => setFormState("idle")} className="mt-10 text-indigo-400 font-bold hover:text-white transition-colors">Send another inquiry</button>
               </MagicBento>
             ) : (
-              <MagicBento className="!p-8 lg:!p-12 space-y-10">
-                <div className="grid sm:grid-cols-2 gap-8">
+              <form onSubmit={handleSubmit}>
+              <MagicBento className="!p-6 sm:!p-10 lg:!p-12 space-y-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                   {/* Full Name */}
                   <div>
                     <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3 block ml-1">Full Name *</label>
@@ -96,7 +93,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                   {/* Business Type */}
                   <div>
                     <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3 block ml-1">Business Type *</label>
@@ -146,12 +143,25 @@ export default function ContactPage() {
                 <button type="submit" disabled={formState === "loading"} className="w-full py-5 bg-gradient-to-r from-neonIndigo to-purple-600 text-white font-bold rounded-xl shadow-xl hover:shadow-[0_0_40px_rgba(99,102,241,0.5)] transition-all flex items-center justify-center gap-3 disabled:opacity-70 group/sub">
                   {formState === "loading" ? <><Loader2 className="w-6 h-6 animate-spin" /> Processing...</> : <>🚀 Submit — Get My Free Audit <ArrowRight className="w-4 h-4 group-hover/sub:translate-x-1 transition-transform" /></>}
                 </button>
+
+                {/* Client Strip Below Form */}
+                <div className="pt-8 border-t border-white/5 text-center">
+                   <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-6">
+                      Trusted by HDFC Bank, Vision IAS, Kedia Group, Liberty Hospital & 40+ Jaipur Businesses
+                   </p>
+                   <div className="flex flex-wrap items-center justify-center gap-6 opacity-30">
+                      {["hdfc.png", "vision.png", "liberty.png", "pnb.png"].map(img => (
+                        <img key={img} src={`/assets/logos/Logo_Assets/clients/${img}`} className="h-6 object-contain" alt="Client Logo" />
+                      ))}
+                   </div>
+                </div>
               </MagicBento>
+              </form>
             )}
           </motion.div>
 
           {/* Right — Contact Details */}
-          <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }} className="space-y-6">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="space-y-6 w-full">
             <MagicBento className="!p-8 space-y-10">
               <div className="flex items-start gap-5 group">
                 <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500">

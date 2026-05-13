@@ -9,7 +9,7 @@
   --color-cyber-cyan: #06B6D4;
   --color-pure-white: #ffffff;
   --color-muted-grey: #9ca3af;
-  
+
   --navbar-height: 72px;
 }
 
@@ -152,5 +152,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .mobile-full-width-cta {
     @apply w-full flex items-center justify-center min-h-[56px] text-center;
+  }
+}
+
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.1);
   }
 }

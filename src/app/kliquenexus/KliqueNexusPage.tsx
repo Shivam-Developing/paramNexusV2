@@ -66,13 +66,12 @@ export default function KliqueNexusPage() {
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-yellow-500/10 blur-[140px] rounded-full z-[2] pointer-events-none" />
 
         <div className="relative z-[10] max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-5 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-yellow-400 bg-yellow-400/10 rounded-full mb-10 border border-yellow-400/20">
-            <Film className="w-3 h-3" /> Introducing KliqueNexus — The Video Wing
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-10">
+            PARAM NEXUS · Digital Wing of Param Advertising Agency
           </motion.div>
-          
           <BlurText 
-            text="Video Is No Longer Optional."
-            className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight"
+            text="Static Ads Are Dead."
+            className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1]"
           />
           <div className="mt-4">
             <GradientText colors={["#FACC15", "#EAB308", "#FDE047"]} className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
