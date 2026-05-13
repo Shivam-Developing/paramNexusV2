@@ -17,31 +17,31 @@ const services = [
     icon: <Smartphone className="w-6 h-6 text-yellow-400" />, 
     title: "MONTHLY REELS PACKAGE", 
     desc: "Consistent, scroll-stopping video presence for Instagram and YouTube Shorts. We handle the scripting, shooting, and editing so you stay relevant every single week.", 
-    pricing: "Starter: 4 Reels — ₹7,999/mo\nPro: 8 Reels + 2 Long cuts — ₹12,999/mo" 
+    pricing: "Pricing on enquiry" 
   },
   { 
     icon: <Video className="w-6 h-6 text-yellow-400" />, 
     title: "BRAND STORY VIDEO", 
     desc: "A cinematic 60–90 second video that tells your brand's story — who you are, why you matter, and why Jaipur should trust you.", 
-    pricing: "₹14,999 – ₹24,999 (one-time)" 
+    pricing: "Pricing on enquiry" 
   },
   { 
     icon: <Play className="w-6 h-6 text-yellow-400" />, 
     title: "PRODUCT SHOWCASE", 
     desc: "Half-day professional shoot of your products, interior, or team — ready for ads, website, and social media catalogs.", 
-    pricing: "₹8,999 – ₹15,999 (one-time)" 
+    pricing: "Pricing on enquiry" 
   },
   { 
     icon: <Calendar className="w-6 h-6 text-yellow-400" />, 
     title: "EVENT COVERAGE", 
     desc: "Full-day shoot of your launch, anniversary, or brand activation — delivered as high-energy highlight reels that build FOMO.", 
-    pricing: "₹12,999 – ₹24,999 (one-time)" 
+    pricing: "Pricing on enquiry" 
   },
   { 
     icon: <Film className="w-6 h-6 text-yellow-400" />, 
     title: "YOUTUBE CONTENT", 
     desc: "4 videos/month — scripted, shot, edited, with SEO titles and thumbnails for building long-term authority in your niche.", 
-    pricing: "₹15,999 – ₹24,999/month" 
+    pricing: "Pricing on enquiry" 
   },
 ];
 

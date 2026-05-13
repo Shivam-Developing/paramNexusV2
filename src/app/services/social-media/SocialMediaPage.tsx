@@ -13,22 +13,22 @@ import {
 
 const plans = [
   {
-    name: "SPARK", price: "₹4,999/month", popular: false,
+    name: "SPARK", price: "Pricing on enquiry", popular: false,
     perfect: "Perfect for: New businesses and shops starting their social presence.",
     features: ["2 Platforms (Insta + FB)", "12 Posts/Month — AI Design", "Caption Copywriting (Hindi/Eng)", "Hashtag Strategy", "Seasonal Posts Included"],
-    cta: "Start with Spark",
+    cta: "Enquire for Pricing",
   },
   {
-    name: "GROW", price: "₹8,999/month", popular: true,
+    name: "GROW", price: "Pricing on enquiry", popular: true,
     perfect: "Perfect for: Active local businesses wanting consistent growth.",
     features: ["3 Platforms (Insta + FB + Google)", "20 Posts + 4 Reels + Daily Stories", "Custom Content Calendar", "Community Management", "Bi-weekly Performance Reports"],
-    cta: "Start with Grow",
+    cta: "Enquire for Pricing",
   },
   {
-    name: "DOMINATE", price: "₹14,999/month", popular: false,
+    name: "DOMINATE", price: "Pricing on enquiry", popular: false,
     perfect: "Perfect for: Real estate, hospitals, and hotels wanting aggressive leads.",
     features: ["4 Platforms (+ YouTube Shorts)", "30 Posts + 8 Reels + Highlights", "Meta & Google Ads Management", "AI-Generated Ad Creatives", "Monthly Strategy Calls"],
-    cta: "Start with Dominate",
+    cta: "Enquire for Pricing",
   },
 ];
 

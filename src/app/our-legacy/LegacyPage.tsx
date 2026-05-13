@@ -112,8 +112,8 @@ export default function LegacyPage() {
          
          <div className="flex gap-12 animate-infinite-scroll">
             {[...publisherLogos, ...publisherLogos].map((pub, i) => (
-               <div key={i} className="flex-shrink-0 flex items-center gap-4 px-8 py-6 bg-white/5 border border-white/10 rounded-2xl grayscale hover:grayscale-0 transition-all duration-500 hover:bg-white/10">
-                  <img src={pub.path} alt={pub.name} className="h-8 object-contain" />
+               <div key={i} className="flex-shrink-0 flex items-center gap-6 px-8 py-6 bg-white/5 border border-white/10 rounded-2xl grayscale hover:grayscale-0 transition-all duration-500 hover:bg-white/10">
+                  <img src={pub.path} alt={pub.name} className="h-10 object-contain" />
                   <span className="text-sm font-bold text-gray-400 whitespace-nowrap">{pub.name}</span>
                </div>
             ))}

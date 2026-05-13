@@ -64,7 +64,7 @@ export default function Navbar() {
                 PARAM NEXUS
               </span>
               <span className="text-[9px] tracking-[0.3em] text-gray-500 uppercase -mt-0.5 group-hover:text-cyberCyan transition-colors duration-300 font-bold">
-                AI-Powered Digital Growth
+                Digital Wing of Param Advertising Agency
               </span>
             </div>
           </Link>

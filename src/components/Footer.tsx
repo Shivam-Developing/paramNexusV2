@@ -15,9 +15,6 @@ const companyLinks = [
 ];
 
 const socialLinks = [
-  { label: "Instagram", href: "https://instagram.com/paramnexus", icon: <Instagram className="w-5 h-5" /> },
-  { label: "LinkedIn", href: "https://linkedin.com/company/paramnexus", icon: <Linkedin className="w-5 h-5" /> },
-  { label: "YouTube", href: "https://youtube.com/@paramnexus", icon: <Youtube className="w-5 h-5" /> },
   { label: "WhatsApp", href: "https://wa.me/918744003727", icon: <MessageSquare className="w-5 h-5" /> },
 ];
 
@@ -103,7 +100,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Contact */}
           <div>
             <h4 className="font-display text-[11px] font-bold text-white uppercase tracking-[0.3em] mb-8">
               Contact

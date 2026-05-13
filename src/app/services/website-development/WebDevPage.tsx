@@ -24,19 +24,19 @@ const features = [
 
 const pricingTiers = [
   {
-    name: "STARTER", price: "₹8,999", popular: false, perfect: "Perfect for: New businesses, shops, clinics, and freelancers who need a clean digital presence fast.",
+    name: "STARTER", price: "Pricing on enquiry", popular: false, perfect: "Perfect for: New businesses, shops, clinics, and freelancers who need a clean digital presence fast.",
     features: ["5 Professional Pages", "Mobile Responsive Design", "WhatsApp & Call Button", "Google Maps Integration", "Basic On-Page SEO Setup", "1 Month Free Support"],
-    delivery: "10–12 Days", cta: "Get Started with Starter",
+    delivery: "10–12 Days", cta: "Enquire for Pricing",
   },
   {
-    name: "BUSINESS", price: "₹18,999", popular: true, perfect: "Perfect for: Established local businesses, coaching institutes, clinics, and retail stores wanting a complete digital presence.",
+    name: "BUSINESS", price: "Pricing on enquiry", popular: true, perfect: "Perfect for: Established local businesses, coaching institutes, clinics, and retail stores wanting a complete digital presence.",
     features: ["Up to 12 Pages", "AI Chatbot Integration", "Enquiry & Booking Forms", "Blog / News Section", "Google Analytics & Search Console", "2 Months Free Support"],
-    delivery: "12–15 Days", cta: "Get Started with Business",
+    delivery: "12–15 Days", cta: "Enquire for Pricing",
   },
   {
-    name: "PREMIUM", price: "₹39,999", popular: false, perfect: "Perfect for: Hotels, real estate developers, large coaching brands, and jewelers needing a full custom digital experience.",
+    name: "PREMIUM", price: "Pricing on enquiry", popular: false, perfect: "Perfect for: Hotels, real estate developers, large coaching brands, and jewelers needing a full custom digital experience.",
     features: ["Fully Custom UI/UX Design", "Content Management System (CMS)", "Appointment / Booking System", "Core Web Vitals Optimization", "Advanced Analytics Dashboard", "3 Months Priority Support"],
-    delivery: "15–20 Days", cta: "Get Started with Premium",
+    delivery: "15–20 Days", cta: "Enquire for Pricing",
   },
 ];
 
