@@ -7,13 +7,13 @@ const clientLogos = [
   { name: "HDFC Bank", path: "/assets/logos/Logo_Assets/clients/hdfc.png" },
   { name: "PNB Bank", path: "/assets/logos/Logo_Assets/clients/pnb.png" },
   { name: "Vision IAS", path: "/assets/logos/Logo_Assets/clients/vision.png" },
-  { name: "KEDIA Group", path: "/assets/logos/Logo_Assets/clients/kedia.jpeg" },
+  { name: "KEDIA Group", path: "/assets/logos/Logo_Assets/clients/kedia.png" },
   { name: "Patanjali IAS", path: "/assets/logos/Logo_Assets/clients/patanjali.jpeg" },
   { name: "Liberty Hospital", path: "/assets/logos/Logo_Assets/clients/liberty.png" },
   { name: "IIS University", path: "/assets/logos/Logo_Assets/clients/iis.jpeg" },
-  { name: "Cambridge School", path: "/assets/logos/Logo_Assets/clients/cambridge.jpeg" },
-  { name: "Vision IAS", path: "/assets/logos/Logo_Assets/clients/vision.png" },
-  { name: "HDFC Bank", path: "/assets/logos/Logo_Assets/clients/hdfc.png" },
+  { name: "Warren Academy", path: "/assets/logos/Logo_Assets/clients/warren.jpeg" },
+  { name: "Kidzee", path: "/assets/logos/Logo_Assets/clients/kidzee.jpeg" },
+  { name: "Bachpan", path: "/assets/logos/Logo_Assets/clients/bachpan.jpeg" },
 ];
 
 export default function TrustStrip() {

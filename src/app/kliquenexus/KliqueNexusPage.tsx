@@ -58,7 +58,7 @@ export default function KliqueNexusPage() {
   return (
     <div className="bg-obsidian text-white selection:bg-yellow-400/30">
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden z-0">
+      <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 lg:pt-36 lg:pb-32 overflow-hidden z-0">
         <div className="absolute inset-0 z-[1] pointer-events-none">
           <Galaxy color="#FACC15" className="opacity-40" />
         </div>
@@ -69,14 +69,16 @@ export default function KliqueNexusPage() {
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-10">
             PARAM NEXUS · Digital Wing of Param Advertising Agency
           </motion.div>
-          <BlurText 
-            text="Static Ads Are Dead."
-            className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1]"
-          />
-          <div className="mt-4">
-            <GradientText colors={["#FACC15", "#EAB308", "#FDE047"]} className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
-              It&apos;s the Language of Business.
-            </GradientText>
+          <div className="flex flex-col items-center">
+            <BlurText 
+              text="Static Ads Are Dead."
+              className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] mb-4 text-center"
+            />
+            <div className="text-center">
+              <GradientText colors={["#FACC15", "#EAB308", "#FDE047"]} className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1]">
+                It&apos;s the Language of Business.
+              </GradientText>
+            </div>
           </div>
           
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="mt-8 text-gray-400 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
@@ -129,8 +131,13 @@ export default function KliqueNexusPage() {
                     </div>
                     <div className="hidden lg:block relative group/video">
                        <div className="aspect-video bg-[#121216] rounded-3xl border border-white/10 flex items-center justify-center overflow-hidden relative">
+                          <img 
+                            src={`/klique_nexus_video_showcase_${i + 1}.png`} 
+                            alt={s.title} 
+                            className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover/video:scale-110 group-hover/video:opacity-60 transition-all duration-700" 
+                          />
                           <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 via-transparent to-transparent opacity-0 group-hover/video:opacity-100 transition-opacity duration-500" />
-                          <div className="w-20 h-20 rounded-full bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center text-yellow-400 group-hover/video:scale-110 transition-all duration-500 shadow-[0_0_40px_rgba(250,204,21,0.1)]">
+                          <div className="w-20 h-20 rounded-full bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center text-yellow-400 group-hover/video:scale-110 transition-all duration-500 shadow-[0_0_40px_rgba(250,204,21,0.1)] relative z-10">
                             <Play className="w-8 h-8 fill-yellow-400 ml-1" />
                           </div>
                        </div>

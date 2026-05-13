@@ -83,7 +83,7 @@ export default function StarterBundle() {
                   </p>
                   <div className="relative inline-block">
                     <p className="text-4xl font-display font-bold text-white">
-                      ₹19,999 <span className="text-sm text-gray-500 font-normal">Only</span>
+                      Pricing on Enquiry
                     </p>
                   </div>
                 </div>

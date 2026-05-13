@@ -9,7 +9,7 @@ import { GradientText } from "@/components/GradientText";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-obsidian overflow-hidden z-0 flex items-center pt-24 lg:pt-0">
+    <section className="relative min-h-screen bg-obsidian overflow-hidden z-0 flex items-center pt-48 lg:pt-20">
       {/* Layer 1: Ambient Backdrop Canvas */}
       <div className="absolute inset-0 z-[1] pointer-events-none">
         <Galaxy className="opacity-40" />
@@ -120,14 +120,7 @@ export default function HeroSection() {
                     </div>
                     
                     <div className="flex items-center gap-4 px-2">
-                       <div className="flex -space-x-3">
-                          {[1,2,3,4].map(i => (
-                            <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0B0B0E] bg-white/10 flex items-center justify-center text-[10px] font-bold text-gray-400">
-                               {String.fromCharCode(64 + i)}
-                            </div>
-                          ))}
-                       </div>
-                       <p className="text-xs text-gray-500 font-medium">Trusted by <span className="text-white">500+ Local Brands</span></p>
+                       <p className="text-xs text-gray-500 font-medium ml-2">Trusted by <span className="text-white">500+ Local Brands</span></p>
                     </div>
                   </div>
 

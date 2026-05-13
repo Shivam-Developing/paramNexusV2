@@ -116,17 +116,26 @@ export default function Footer() {
                   </a>
                 </div>
               </li>
-              <li className="flex items-center gap-4">
-                <Mail className="w-5 h-5 text-neonIndigo shrink-0" />
+              <li className="flex items-center gap-4 group/item">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-neonIndigo group-hover/item:bg-neonIndigo group-hover/item:text-white transition-all duration-300">
+                  <Mail className="w-5 h-5" />
+                </div>
                 <a href="mailto:nexusparam@gmail.com" className="text-sm hover:text-white transition-colors font-medium">
                   nexusparam@gmail.com
                 </a>
               </li>
-              <li className="flex items-start gap-4">
-                <MapPin className="w-5 h-5 text-neonIndigo shrink-0" />
-                <span className="text-sm leading-relaxed">
+              <li className="flex items-start gap-4 group/item">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-neonIndigo group-hover/item:bg-neonIndigo group-hover/item:text-white transition-all duration-300 shrink-0">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <a 
+                  href="https://maps.google.com/?q=Param+Advertising+Jaipur" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm leading-relaxed hover:text-white transition-colors"
+                >
                   Param Cloth Store, 22, Arjun Nagar Phatak Rd, Kartarpura Phatak, Bhagwati Nagar, Bais Godam, Jaipur, Rajasthan 302006
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-4">
                 <Clock className="w-5 h-5 text-neonIndigo shrink-0" />

@@ -11,16 +11,18 @@ import { MagicBento } from "@/components/MagicBento";
 import { BlurText } from "@/components/BlurText";
 import { GradientText } from "@/components/GradientText";
 import { Cubes } from "@/components/Cubes";
+import { AnimatedContent } from "@/components/animations/AnimatedContent";
+import { ShinyText } from "@/components/animations/ShinyText";
 
 const publisherLogos = [
   { name: "Hindustan Times", path: "/assets/logos/Logo_Assets/publishers/ht.png" },
-  { name: "Dainik Bhaskar", path: "/assets/logos/Logo_Assets/publishers/bhaskar.jpeg" },
+  { name: "Dainik Bhaskar", path: "/assets/logos/Logo_Assets/publishers/dainik-bhaskar.png" },
   { name: "Rajasthan Patrika", path: "/assets/logos/Logo_Assets/publishers/patrika.jpeg" },
   { name: "Times of India", path: "/assets/logos/Logo_Assets/publishers/toi.png" },
   { name: "Dainik Jagran", path: "/assets/logos/Logo_Assets/publishers/jagran.png" },
-  { name: "Zee TV", path: "/assets/logos/Logo_Assets/publishers/zee.png" },
+  { name: "Zee TV", path: "/assets/logos/Logo_Assets/publishers/etv.jpeg" },
   { name: "Radio Mirchi", path: "/assets/logos/Logo_Assets/publishers/mirchi.jpeg" },
-  { name: "PVR INOX", path: "/assets/logos/Logo_Assets/publishers/pvr.png" },
+  { name: "PVR INOX", path: "/assets/logos/Logo_Assets/publishers/inox.png" },
 ];
 
 const mediaNetwork = [
@@ -69,7 +71,7 @@ export default function LegacyPage() {
   return (
     <div className="bg-obsidian text-white selection:bg-indigo-500/30">
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden z-0">
+      <section className="relative min-h-[70vh] flex items-center pt-20 pb-20 overflow-hidden z-0">
         <div className="absolute inset-0 z-[1] pointer-events-none">
           <Galaxy className="opacity-40" />
         </div>
@@ -78,7 +80,6 @@ export default function LegacyPage() {
 
         <div className="relative z-[10] max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mb-12">
-              <img src="/logo.jpeg" alt="Param Advertising" className="w-32 h-32 rounded-3xl mx-auto border border-white/10 shadow-2xl mb-8" />
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[10px] font-bold uppercase tracking-[0.2em]">
                 Est. 2000s · Two Decades of Authority
               </div>
@@ -89,14 +90,14 @@ export default function LegacyPage() {
             <GradientText>FOR OVER TWO DECADES.</GradientText>
           </h1>
           
-          <div className="space-y-8 text-gray-400 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
+          <div className="space-y-6 text-gray-400 text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed">
             <p>
               Param Advertising Agency did not start in the digital age. 
-              We started with the power of the printed word and the morning newspaper. 
+              We started with the power of the printed word and the morning newspaper.
             </p>
-            <p>
+            <p className="text-white font-medium">
               Before websites. Before Instagram. Before Google. 
-              There was print — and <span className="text-white font-bold uppercase tracking-wide">Param Advertising Agency</span> was placing campaigns 
+              There was print — and <span className="text-indigo-400 font-bold uppercase tracking-wide">Param Advertising Agency</span> was placing campaigns 
               in every major newspaper in Rajasthan since the early 2000s.
             </p>
           </div>
@@ -125,24 +126,59 @@ export default function LegacyPage() {
         <Cubes className="absolute bottom-0 right-0 opacity-10 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-24 text-center">One Call. Every Major Platform in Jaipur.</h2>
+          <div className="text-center mb-24">
+             <ShinyText 
+                text="One Call. Every Major Platform in Jaipur." 
+                className="font-display text-4xl sm:text-5xl font-bold"
+             />
+          </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mediaNetwork.map((media, i) => (
-              <MagicBento key={i} className="flex flex-col group">
-                <div className="mb-8 w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500">
-                   {media.icon}
+              <AnimatedContent
+                key={i}
+                direction="vertical"
+                distance={50}
+                duration={0.6}
+                delay={i * 0.1}
+                threshold={0.15}
+              >
+                <div className="relative group h-full rounded-[2.5rem] bg-[#0B0B0E]/60 backdrop-blur-xl border border-white/5 p-10 lg:p-12 flex flex-col justify-between overflow-hidden transition-all duration-500 hover:bg-[#121216]/80 hover:border-indigo-500/20 hover:-translate-y-1.5 shadow-2xl">
+                  
+                  {/* Ambient Back-Glow */}
+                  <div className="absolute -top-12 -left-12 w-36 h-36 bg-gradient-to-br from-indigo-500/10 to-purple-500/0 rounded-full blur-2xl group-hover:from-indigo-500/30 group-hover:scale-150 transition-all duration-700 pointer-events-none" />
+                  
+                  {/* Top Accent Line */}
+                  <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-indigo-500/0 to-transparent group-hover:via-indigo-500/50 transition-all duration-700 opacity-0 group-hover:opacity-100" />
+                  
+                  <div className="flex justify-between items-start mb-10 relative z-10">
+                     <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-indigo-400 group-hover:bg-indigo-500/10 group-hover:text-indigo-300 group-hover:scale-110 transition-all duration-500">
+                        {media.icon}
+                     </div>
+                     <span className="text-xs font-black text-white/20 uppercase tracking-[0.4em] group-hover:text-white/40 transition-colors">0{i + 1}</span>
+                  </div>
+                  
+                  <div className="relative z-10 flex-grow">
+                    <h3 className="font-display text-2xl font-black text-white tracking-tight mb-8 uppercase group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-indigo-300 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500">
+                      {media.title}
+                    </h3>
+                    
+                    <ul className="space-y-4">
+                       {media.items.map((item, idx) => (
+                          <li key={idx} className="flex items-center text-xs font-semibold tracking-wider text-gray-500 group-hover:text-gray-300 transition-colors duration-300">
+                             <span className="mr-4 text-[9px] text-indigo-500/40 group-hover:text-indigo-400 transition-colors duration-300">
+                                ✦
+                             </span>
+                             {item}
+                          </li>
+                       ))}
+                    </ul>
+                  </div>
+
+                  {/* Subtle Bottom Glow Spark */}
+                  <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-indigo-500/5 to-transparent rounded-full blur-xl pointer-events-none group-hover:from-indigo-500/15 transition-all duration-500" />
                 </div>
-                <h3 className="font-display text-xl font-bold text-white mb-6 tracking-tight uppercase">{media.title}</h3>
-                <div className="space-y-3 flex-1">
-                   {media.items.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-3 text-sm text-gray-500 group-hover:text-gray-300 transition-colors">
-                         <div className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-indigo-500/40" />
-                         {item}
-                      </div>
-                   ))}
-                </div>
-              </MagicBento>
+              </AnimatedContent>
             ))}
           </div>
         </div>
@@ -161,33 +197,29 @@ export default function LegacyPage() {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-0 items-stretch max-w-5xl mx-auto rounded-[3rem] overflow-hidden border border-white/10 shadow-3xl bg-[#0B0B0E]">
+          <div className="grid lg:grid-cols-2 gap-1 px-1 max-w-6xl mx-auto rounded-[3rem] overflow-hidden bg-white/5 border border-white/10 shadow-3xl">
              {/* Left — Print */}
-             <div className="p-10 lg:p-20 bg-[#FAF9F6] text-black">
-                <h3 className="font-display text-3xl font-bold mb-2 tracking-tight">PARAM <br /> ADVERTISING AGENCY</h3>
-                <p className="text-[10px] text-amber-900 uppercase tracking-[0.3em] font-bold mb-12">Traditional Trust</p>
-                <div className="space-y-6">
+             <div className="p-12 lg:p-20 bg-[#0B0B0E] relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-full h-1 bg-amber-500/50" />
+                <h3 className="font-display text-3xl font-bold text-white mb-2 tracking-tight">PARAM <br /> ADVERTISING AGENCY</h3>
+                <p className="text-[10px] text-amber-500 uppercase tracking-[0.3em] font-bold mb-12">Established Legacy</p>
+                <div className="grid grid-cols-2 gap-y-6 gap-x-8">
                   {bridgeSteps.map((b, i) => (
-                    <div key={i} className="text-sm text-amber-950/60 font-bold uppercase tracking-widest flex items-center justify-between">
+                    <div key={i} className="text-[10px] text-gray-500 font-bold uppercase tracking-widest border-l-2 border-amber-500/20 pl-4 py-1">
                       {b.left}
-                      <ArrowRight className="w-4 h-4 opacity-40" />
                     </div>
                   ))}
                 </div>
              </div>
              
-             {/* Center Bridge */}
-             <div className="hidden lg:flex flex-col items-center justify-center px-12 bg-white/[0.02] border-x border-white/5">
-                <ShieldCheck className="w-12 h-12 text-indigo-500/20" />
-             </div>
-             
              {/* Right — Digital */}
-             <div className="p-10 lg:p-20">
+             <div className="p-12 lg:p-20 bg-[#121216] relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-full h-1 bg-indigo-500/50" />
                 <h3 className="font-display text-3xl font-bold text-white mb-2 tracking-tight">PARAM <br /> NEXUS</h3>
-                <p className="text-[10px] text-indigo-400 uppercase tracking-[0.3em] font-bold mb-12">Digital Dominance</p>
-                <div className="space-y-6">
+                <p className="text-[10px] text-indigo-400 uppercase tracking-[0.3em] font-bold mb-12">Digital Reach & Innovation</p>
+                <div className="grid grid-cols-2 gap-y-6 gap-x-8">
                   {bridgeSteps.map((b, i) => (
-                    <div key={i} className="text-sm text-gray-500 font-bold uppercase tracking-widest">
+                    <div key={i} className="text-[10px] text-gray-500 font-bold uppercase tracking-widest border-l-2 border-indigo-500/20 pl-4 py-1">
                       {b.right}
                     </div>
                   ))}

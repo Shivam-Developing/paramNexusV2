@@ -51,6 +51,7 @@ const config: Config = {
         "spin-slow": "spin 8s linear infinite",
         "card-flip": "cardFlip 0.6s ease forwards",
         "gradient-shift": "gradient-shift 8s ease infinite",
+        "shiny": "shiny 5s linear infinite",
       },
       keyframes: {
         blobPulse: {
@@ -106,6 +107,10 @@ const config: Config = {
           "0%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
           "100%": { backgroundPosition: "0% 50%" },
+        },
+        "shiny": {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
         },
       },
       backgroundSize: {

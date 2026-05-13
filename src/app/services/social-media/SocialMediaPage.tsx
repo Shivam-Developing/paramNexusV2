@@ -45,7 +45,7 @@ export default function SocialMediaPage() {
   return (
     <div className="bg-obsidian text-white selection:bg-indigo-500/30">
       {/* Hero */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden z-0">
+      <section className="relative pt-12 pb-20 lg:pt-16 lg:pb-32 overflow-hidden z-0">
         <div className="absolute inset-0 z-[1] pointer-events-none">
           <Galaxy color="#06B6D4" className="opacity-40" />
         </div>
@@ -55,7 +55,7 @@ export default function SocialMediaPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[10]">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-              <motion.div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-10">
+              <motion.div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-12 mt-6">
                 PARAM NEXUS · Digital Wing of Param Advertising Agency
               </motion.div>
               <BlurText 
