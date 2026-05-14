@@ -9,7 +9,7 @@ import { GradientText } from "@/components/GradientText";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-obsidian overflow-hidden z-0 flex items-center pt-24 lg:pt-20">
+    <section className="relative min-h-screen bg-obsidian overflow-hidden z-0 flex items-center pt-20 lg:pt-20">
       {/* Layer 1: Ambient Backdrop Canvas */}
       <div className="absolute inset-0 z-[1] pointer-events-none">
         <Galaxy className="opacity-40" />
