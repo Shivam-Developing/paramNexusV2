@@ -32,7 +32,7 @@ export default function FinalCTA() {
             <Search className="w-4 h-4" /> Get My Free Digital Audit
           </Link>
           <a
-            href="tel:+918744003727"
+            href="tel:+917982668530"
             className="inline-flex items-center gap-2 px-10 py-4 text-sm font-bold text-gray-300 border border-white/10 rounded-full hover:bg-white/5 transition-all duration-300"
           >
             <Phone className="w-4 h-4" /> Call Us Now

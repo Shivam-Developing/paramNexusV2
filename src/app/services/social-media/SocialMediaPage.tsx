@@ -194,7 +194,7 @@ export default function SocialMediaPage() {
             <Link href="/contact" className="group px-10 py-4 text-sm font-bold text-white bg-gradient-to-r from-neonIndigo to-purple-600 rounded-full shadow-2xl flex items-center gap-2 hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] transition-all">
               <ClipboardList className="w-4 h-4" /> Get Free Social Audit <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a href="https://wa.me/918744003727" target="_blank" rel="noopener noreferrer" className="px-10 py-4 text-sm font-bold text-gray-300 border border-white/10 rounded-full hover:bg-white/5 transition-all flex items-center gap-2">
+            <a href="https://wa.me/917982668530" target="_blank" rel="noopener noreferrer" className="px-10 py-4 text-sm font-bold text-gray-300 border border-white/10 rounded-full hover:bg-white/5 transition-all flex items-center gap-2">
               <MessageSquare className="w-4 h-4" /> WhatsApp Enquiry
             </a>
           </div>

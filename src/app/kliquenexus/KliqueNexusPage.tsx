@@ -176,7 +176,7 @@ export default function KliqueNexusPage() {
              <Link href="/contact" className="group px-10 py-5 text-sm font-bold text-black bg-yellow-400 rounded-full shadow-2xl hover:shadow-yellow-400/30 hover:scale-105 transition-all flex items-center justify-center gap-2">
                <ClipboardList className="w-4 h-4" /> Book Creative Consultation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
              </Link>
-             <a href="https://wa.me/918619620062?text=Hi%20KliqueNexus!" target="_blank" rel="noopener noreferrer" className="px-10 py-5 text-sm font-bold text-gray-300 border border-white/10 rounded-full hover:bg-white/5 transition-all flex items-center gap-2">
+             <a href="https://wa.me/917982668530?text=Hi%20KliqueNexus!" target="_blank" rel="noopener noreferrer" className="px-10 py-5 text-sm font-bold text-gray-300 border border-white/10 rounded-full hover:bg-white/5 transition-all flex items-center gap-2">
                <MessageSquare className="w-4 h-4" /> WhatsApp KliqueNexus
              </a>
           </div>

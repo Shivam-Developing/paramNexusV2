@@ -31,7 +31,29 @@ export default function ContactPage() {
     e.preventDefault();
     if (!validate()) return;
     setFormState("loading");
-    setTimeout(() => setFormState("success"), 1500);
+
+    const bodyData = {
+      "form-name": "contact",
+      fullName: form.fullName,
+      businessName: form.businessName,
+      businessType: form.businessType,
+      phone: form.phone,
+      services: form.services.join(", "),
+      message: form.message
+    };
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(bodyData).toString()
+    })
+    .then(() => {
+      setFormState("success");
+    })
+    .catch((error) => {
+      console.error("Form submission error:", error);
+      setFormState("success");
+    });
   };
 
   const toggleService = (s: string) => {
@@ -76,19 +98,20 @@ export default function ContactPage() {
                 <button onClick={() => setFormState("idle")} className="mt-10 text-indigo-400 font-bold hover:text-white transition-colors">Send another inquiry</button>
               </MagicBento>
             ) : (
-              <form onSubmit={handleSubmit}>
-              <MagicBento className="!p-6 sm:!p-10 lg:!p-12 space-y-10">
+              <form name="contact" data-netlify="true" onSubmit={handleSubmit}>
+                <input type="hidden" name="form-name" value="contact" />
+                <MagicBento className="!p-6 sm:!p-10 lg:!p-12 space-y-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                   {/* Full Name */}
                   <div>
                     <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3 block ml-1">Full Name *</label>
-                    <input type="text" value={form.fullName} onChange={e => setForm(p => ({ ...p, fullName: e.target.value }))} className={`w-full px-5 py-4 rounded-xl bg-white/5 border ${errors.fullName ? "border-red-500/50" : "border-white/10"} text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/50 transition-all placeholder:text-gray-600`} placeholder="Your full name" />
+                    <input type="text" name="fullName" value={form.fullName} onChange={e => setForm(p => ({ ...p, fullName: e.target.value }))} className={`w-full px-5 py-4 rounded-xl bg-white/5 border ${errors.fullName ? "border-red-500/50" : "border-white/10"} text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/50 transition-all placeholder:text-gray-600`} placeholder="Your full name" />
                     {errors.fullName && <p className="text-[10px] text-red-500 mt-2 font-bold ml-1 uppercase tracking-wider">{errors.fullName}</p>}
                   </div>
                   {/* Business Name */}
                   <div>
                     <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3 block ml-1">Business Name *</label>
-                    <input type="text" value={form.businessName} onChange={e => setForm(p => ({ ...p, businessName: e.target.value }))} className={`w-full px-5 py-4 rounded-xl bg-white/5 border ${errors.businessName ? "border-red-500/50" : "border-white/10"} text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/50 transition-all placeholder:text-gray-600`} placeholder="Your business name" />
+                    <input type="text" name="businessName" value={form.businessName} onChange={e => setForm(p => ({ ...p, businessName: e.target.value }))} className={`w-full px-5 py-4 rounded-xl bg-white/5 border ${errors.businessName ? "border-red-500/50" : "border-white/10"} text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/50 transition-all placeholder:text-gray-600`} placeholder="Your business name" />
                     {errors.businessName && <p className="text-[10px] text-red-500 mt-2 font-bold ml-1 uppercase tracking-wider">{errors.businessName}</p>}
                   </div>
                 </div>
@@ -98,7 +121,7 @@ export default function ContactPage() {
                   <div>
                     <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3 block ml-1">Business Type *</label>
                     <div className="relative">
-                      <select value={form.businessType} onChange={e => setForm(p => ({ ...p, businessType: e.target.value }))} className={`w-full px-5 py-4 rounded-xl bg-white/5 border ${errors.businessType ? "border-red-500/50" : "border-white/10"} text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/50 transition-all appearance-none cursor-pointer`}>
+                      <select name="businessType" value={form.businessType} onChange={e => setForm(p => ({ ...p, businessType: e.target.value }))} className={`w-full px-5 py-4 rounded-xl bg-white/5 border ${errors.businessType ? "border-red-500/50" : "border-white/10"} text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/50 transition-all appearance-none cursor-pointer`}>
                         <option value="" className="bg-obsidian">Select your industry</option>
                         {businessTypes.map(t => <option key={t} value={t} className="bg-obsidian">{t}</option>)}
                       </select>
@@ -110,7 +133,7 @@ export default function ContactPage() {
                     <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3 block ml-1">Phone Number *</label>
                     <div className="flex">
                       <span className="px-5 py-4 bg-white/5 rounded-l-xl border border-r-0 border-white/10 text-xs text-gray-500 font-bold uppercase tracking-widest">+91</span>
-                      <input type="tel" value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value.replace(/\D/g, "").slice(0, 10) }))} className={`flex-1 px-5 py-4 rounded-r-xl bg-white/5 border ${errors.phone ? "border-red-500/50" : "border-white/10"} text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/50 transition-all placeholder:text-gray-600`} placeholder="XXXXXXXXXX" />
+                      <input type="tel" name="phone" value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value.replace(/\D/g, "").slice(0, 10) }))} className={`flex-1 px-5 py-4 rounded-r-xl bg-white/5 border ${errors.phone ? "border-red-500/50" : "border-white/10"} text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/50 transition-all placeholder:text-gray-600`} placeholder="XXXXXXXXXX" />
                     </div>
                     {errors.phone && <p className="text-[10px] text-red-500 mt-2 font-bold ml-1 uppercase tracking-wider">{errors.phone}</p>}
                   </div>
@@ -122,7 +145,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {serviceOptions.map(s => (
                       <label key={s} className={`flex items-center gap-4 px-5 py-4 rounded-xl border cursor-pointer transition-all ${form.services.includes(s) ? "bg-indigo-500/10 border-indigo-500/40 text-white" : "bg-white/5 border-white/10 text-gray-400 hover:bg-white/10"}`}>
-                        <input type="checkbox" checked={form.services.includes(s)} onChange={() => toggleService(s)} className="sr-only" />
+                        <input type="checkbox" name="services" value={s} checked={form.services.includes(s)} onChange={() => toggleService(s)} className="sr-only" />
                         <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center shrink-0 transition-all ${form.services.includes(s) ? "bg-indigo-500 border-indigo-500" : "border-white/20"}`}>
                           {form.services.includes(s) && <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                         </div>
@@ -136,7 +159,7 @@ export default function ContactPage() {
                 {/* Message */}
                 <div>
                   <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3 block ml-1">Message (Optional)</label>
-                  <textarea value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} rows={4} className="w-full px-5 py-4 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/50 transition-all resize-none placeholder:text-gray-600" placeholder="Tell us about your business goals..." />
+                  <textarea name="message" value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} rows={4} className="w-full px-5 py-4 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/50 transition-all resize-none placeholder:text-gray-600" placeholder="Tell us about your business goals..." />
                 </div>
 
                 {/* Submit */}
@@ -169,7 +192,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Call / WhatsApp</p>
-                  <a href="tel:+918744003727" className="text-lg text-white hover:text-indigo-400 transition-colors block font-display font-bold tracking-tight">+91 87440 03727</a>
+                  <a href="tel:+917982668530" className="text-lg text-white hover:text-indigo-400 transition-colors block font-display font-bold tracking-tight">+91 79826 68530</a>
+                  <a href="tel:+918744003727" className="text-lg text-white hover:text-indigo-400 transition-colors block font-display font-bold mt-1 tracking-tight">+91 87440 03727</a>
                   <a href="tel:+918619620062" className="text-lg text-white hover:text-indigo-400 transition-colors block font-display font-bold mt-1 tracking-tight">+91 86196 20062</a>
                 </div>
               </div>
@@ -210,7 +234,7 @@ export default function ContactPage() {
               </div>
             </MagicBento>
 
-            <a href="https://wa.me/918744003727" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-5 bg-[#121216] border border-white/10 text-white font-bold rounded-2xl transition-all shadow-xl group hover:border-indigo-500/50 hover:-translate-y-1">
+            <a href="https://wa.me/917982668530" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-5 bg-[#121216] border border-white/10 text-white font-bold rounded-2xl transition-all shadow-xl group hover:border-indigo-500/50 hover:-translate-y-1">
               <Calendar className="w-5 h-5 text-indigo-400 group-hover:scale-110 transition-transform" /> 
               Book a Strategy Call
             </a>
